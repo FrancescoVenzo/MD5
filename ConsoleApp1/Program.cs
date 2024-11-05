@@ -34,7 +34,6 @@ void funzione()
                         MD5 = CreateMD5(risultato);
                         if (MD5 == obiettivo)
                         {
-                            Console.WriteLine("ciao");
                             Console.WriteLine($"{obiettivo} corrisponde a {risultato}");
                             return;
                         }
@@ -51,7 +50,6 @@ void funzione()
         }
         c0 = (char)(c0 + 1);
         c1 = 'a';
-        Console.WriteLine(risultato);
     }
 }
 
@@ -66,6 +64,6 @@ string CreateMD5(string input)
 
     // string representation (similar to UNIX format)
     string encoded = BitConverter.ToString(hash);
-    encoded  =
+    encoded = encoded.ToLower().Replace("-", string.Empty);
     return encoded;
 }
